@@ -1,0 +1,5 @@
+- Add TomTom Map
+- Show locations on the map for both users
+- Input Name and location from the users.
+- Fix hovering issue on current location button
+- 

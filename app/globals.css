@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MapLibre GL Styles */
+@import url("https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css");
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 11 93% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 11 93% 64%;
+    --radius: 1.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 11 93% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 11 93% 64%;
+  }
+}
+
+/* Custom pink background */
+.bg-pink-soft {
+  background: #fde2e7;
+}
+
+.bg-coral {
+  background: #ff6b6b;
+}
+
+.text-coral {
+  color: #ff6b6b;
+}
+
+/* Floating animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-delayed {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4s ease-in-out infinite;
+}
+
+/* Card shadows */
+.card-shadow {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-shadow-hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* MapLibre GL Map Customizations */
+.maplibre-map-container {
+  background-color: #f8f9fa;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.maplibregl-map {
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 16px !important;
+  background: #f8f9fa !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Navigation control styling */
+.maplibregl-ctrl-top-right {
+  top: 16px !important;
+  right: 16px !important;
+}
+
+.maplibregl-ctrl-group {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+}
+
+.maplibregl-ctrl-group button {
+  background: white !important;
+  color: #333 !important;
+  border: none !important;
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  transition: all 0.2s ease !important;
+}
+
+.maplibregl-ctrl-group button:hover {
+  background: #f0f0f0 !important;
+  color: #FF6B6B !important;
+}
+
+.maplibregl-ctrl-group button:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+/* Attribution control styling */
+.maplibregl-ctrl-bottom-right {
+  bottom: 8px !important;
+  right: 8px !important;
+}
+
+.maplibregl-ctrl-attrib {
+  background: rgba(255, 255, 255, 0.8) !important;
+  font-size: 10px !important;
+  border-radius: 8px !important;
+  padding: 4px 8px !important;
+  border: none !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.maplibregl-ctrl-attrib a {
+  color: #666 !important;
+  text-decoration: none !important;
+}
+
+.maplibregl-ctrl-attrib a:hover {
+  color: #FF6B6B !important;
+}
+
+/* Popup styling */
+.maplibregl-popup {
+  z-index: 1000 !important;
+}
+
+.maplibregl-popup-content {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+  border: none !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  padding: 0 !important;
+  max-width: 300px !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: white !important;
+  border-bottom-color: white !important;
+}
+
+.maplibregl-popup-close-button {
+  color: #666 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  padding: 4px 8px !important;
+  right: 8px !important;
+  top: 8px !important;
+  border: none !important;
+  background: none !important;
+}
+
+.maplibregl-popup-close-button:hover {
+  color: #FF6B6B !important;
+  background: none !important;
+}
+
+/* Custom marker styles */
+.custom-maplibre-marker {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Grid layout fixes for map container */
+.grid .maplibregl-map {
+  min-width: 0 !important;
+  min-height: 400px !important;
+}
+
+/* Canvas and WebGL optimizations */
+.maplibregl-canvas {
+  outline: none !important;
+}
+
+.maplibregl-canvas-container {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+/* Responsive map adjustments */
+@media (max-width: 1024px) {
+  .grid>div:has(.maplibre-map-container) {
+    grid-column: 1 / -1 !important;
+  }
+
+  .maplibregl-ctrl-top-right {
+    top: 12px !important;
+    right: 12px !important;
+  }
+
+  .maplibregl-ctrl-group button {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 14px !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
